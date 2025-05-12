@@ -1,5 +1,7 @@
 # Astro Starter Kit: Minimal
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6fac4c61-bc6c-4fd2-b69d-4473d9e9099b/deploy-status)](https://app.netlify.com/sites/thefamilytreeweb/deploys)
+
 ```sh
 npm create astro@latest -- --template minimal
 ```
