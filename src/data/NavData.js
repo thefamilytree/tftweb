@@ -16,6 +16,10 @@ const IndexNavData = [
     link: '#seminars',
   },
   {
+    title: 'Blog',
+    link: '#blog',
+  },
+  {
     title: 'Contact',
     link: '#appointments',
   },
