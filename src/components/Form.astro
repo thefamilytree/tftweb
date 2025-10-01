@@ -1,6 +1,6 @@
 <div class="form-row">
   <div class="form-area">
-    <form name="contact" method="post" data-netlify="true">
+    <form name="contact" id="contactForm" action="/.netlify/functions/sendMail" method="POST">
       <h3>Enquiry for an appointment</h3>
       <input type="hidden" name="subject" value="New lead from Child and Adolescents page" />
       <input
@@ -25,7 +25,7 @@
           <div class="checkbox-container">
             <label class="checkbox"
               >Appointment
-              <input type="checkbox" name="options" checked="checked" value="Appointment" />
+              <input type="checkbox" name="options[]" checked="checked" value="Appointment" />
               <span class="checkmark"></span>
             </label>
           </div>
@@ -33,7 +33,7 @@
           <div class="checkbox-container">
             <label class="checkbox"
               >Training/Seminar
-              <input type="checkbox" name="options" value="Training/Seminar" />
+              <input type="checkbox" name="options[]" value="Training/Seminar" />
               <span class="checkmark"></span>
             </label>
           </div>
@@ -42,7 +42,7 @@
         <div class="checkbox-container">
           <label class="checkbox"
             >Supervision
-            <input type="checkbox" name="options" value="Supervision" />
+            <input type="checkbox" name="options[]" value="Supervision" />
             <span class="checkmark"></span>
           </label>
         </div>
@@ -50,6 +50,10 @@
 
       <textarea name="message" id="message" cols="30" rows="6" placeholder="Your Message" required
       ></textarea>
+
+      <!-- Honeypot (leave empty) -->
+      <input type="text" name="website" class="hidden" autocomplete="off" tabindex="-1" />
+
       <button type="submit" class="btn-primary">Send Enquiry</button>
     </form>
   </div>
