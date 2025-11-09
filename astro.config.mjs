@@ -9,5 +9,11 @@ import sanity from '@sanity/astro';
 export default defineConfig({
   output: 'server',
   adapter: netlify(),
-  integrations: [sanity()],
+  integrations: [
+    sanity({
+      projectId: 'cxmg0qil',
+      dataset: 'production',
+      useCdn: true,
+    }),
+  ],
 });
