@@ -18,7 +18,7 @@ const blogPosts = await sanityClient.fetch(BLOGPOSTS_QUERY);
 ---
 
 <section id="blog" class="container">
-  <h3>The Family Tree Blog</h3>
+  <h4>The Family Tree Blog</h4>
   <div class="blog-posts">
     {
       blogPosts.map((post: any) => (
@@ -57,6 +57,11 @@ const blogPosts = await sanityClient.fetch(BLOGPOSTS_QUERY);
 
 <style lang="scss">
   @import '../styles/basic';
+  h4 {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
   #blog {
     padding-block: 10rem;
     padding-block-end: 5rem;
