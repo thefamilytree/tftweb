@@ -27,12 +27,18 @@ const blogPosts = await sanityClient.fetch(BLOGPOSTS_QUERY);
             <h2 class="blog-title">{post.title}</h2>
             <p class="blog-description">{post.description}</p>
             <div class="blog-author">
-              <img
-                src={urlFor(post.author.image).url()}
-                alt={post.author.name}
-                class="author-image"
-              />
-              <span class="author-name">{post.author.name}</span>
+              {post.author && (
+                <div class="blog-author">
+                  {post.author.image && (
+                    <img
+                      src={urlFor(post.author.image).url()}
+                      alt={post.author.name || 'Author'}
+                      class="author-image"
+                    />
+                  )}
+                  {post.author.name && <span class="author-name">{post.author.name}</span>}
+                </div>
+              )}
             </div>
             <a href={`/blog/${post.slug.current}`} class="read-more">
               Read more
@@ -93,7 +99,7 @@ const blogPosts = await sanityClient.fetch(BLOGPOSTS_QUERY);
       }
 
       @include tablet {
-        flex-direction: column;
+        flex-direction: row;
         gap: 2rem;
       }
     }
@@ -190,8 +196,8 @@ const blogPosts = await sanityClient.fetch(BLOGPOSTS_QUERY);
 
     .blog-image-wrapper {
       flex: 0 0 auto;
-      width: 450px;
-      height: 320px;
+      width: 40%;
+      height: auto;
       overflow: hidden;
 
       @include mobile {
@@ -201,16 +207,16 @@ const blogPosts = await sanityClient.fetch(BLOGPOSTS_QUERY);
       }
 
       @include tablet {
-        width: 100%;
+        width: 50%;
         height: 300px;
-        order: -1; // Show image first on tablet
+        // order: -1; // Show image first on tablet
       }
     }
 
     .blog-image {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
     }
   }

@@ -194,8 +194,8 @@ if (!post) {
   }
 
   .blog-post-image-wrapper {
-    padding-block: 3rem;
-    background-color: #f9f9f9;
+    padding-block: 3rem 1rem;
+    // background-color: #f9f9f9;
 
     @include mobile {
       padding-block: 2rem;
@@ -204,7 +204,8 @@ if (!post) {
     .blog-post-image {
       width: 100%;
       height: auto;
-      max-height: 600px;
+      max-width: 800px;
+      margin: 0 auto;
       object-fit: cover;
       border-radius: 4px;
       display: block;
